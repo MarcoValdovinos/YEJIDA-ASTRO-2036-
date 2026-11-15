@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const dateObj = new Date(`${dateStr}T${timeStr}:00Z`); // UTC
     wheel.innerHTML = ""; // Limpiar SVG
+    localStorage.setItem('natal_gen', 'true');
     let htmlResult = "<ul>";
 
     // Lista de planetas a calcular

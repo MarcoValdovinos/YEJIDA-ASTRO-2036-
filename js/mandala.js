@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lifePath = sum;
     
     // 2. Generar el Mandala SVG
+    localStorage.setItem('mandala_gen', 'true');
     drawMandala(lifePath);
     
     document.getElementById("mandala-result").innerHTML = 
