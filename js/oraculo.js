@@ -71,5 +71,84 @@ document.addEventListener("DOMContentLoaded", () => {
     if (stardust >= 100) {
       display.innerHTML = "<strong style='color: gold'>🌟 ¡Has desbloqueado la frecuencia 528Hz! 🌟</strong><br>Has sintonizado con el pulso de la Tierra.";
     }
-  });
+  
+  // --- LÓGICA DE RACHA DIARIA ---
+  const today = new Date().toDateString();
+  let lastVisit = localStorage.getItem("last_visit_y");
+  let streak = parseInt(localStorage.getItem("streak_y") || "0");
+
+  if (lastVisit !== today) {
+    const yesterday = new Date();
+    yesterday.setDate(yesterday.getDate() - 1);
+    
+    if (lastVisit === yesterday.toDateString()) {
+      streak++;
+    } else {
+      streak = 1; // Se rompió la racha
+    }
+    localStorage.setItem("last_visit_y", today);
+    localStorage.setItem("streak_y", streak);
+  }
+
+  // Mostrar racha en el HUD
+  const hudHTML = document.querySelector("#oraculo-hud h4");
+  if (hudHTML && !document.getElementById("streak-display")) {
+    hudHTML.innerHTML += `<div id="streak-display" style="font-size:0.8rem; margin-top:5px; color:#ffa500;">🔥 Racha: ${streak} días</div>`;
+  }
+
+  // Multiplicador de puntos por racha
+  const multiplier = Math.min(streak, 5); // Máximo x5
+
+  // Sobrescribir la función del botón para aplicar el multiplicador
+  const originalBtn = document.getElementById("btn-stardust");
+  if (originalBtn) {
+    const newBtn = originalBtn.cloneNode(true);
+    originalBtn.parentNode.replaceChild(newBtn, originalBtn);
+    
+    newBtn.addEventListener("click", () => {
+      stardust += (Math.floor(Math.random() * 5) + 1) * multiplier;
+      localStorage.setItem("stardust_y", stardust);
+      document.getElementById("stardust-count").innerText = stardust;
+      document.getElementById("fact-display").innerText = facts[Math.floor(Math.random() * facts.length)];
+      newBtn.style.transform = "scale(0.9)";
+      setTimeout(() => newBtn.style.transform = "scale(1)", 150);
+      
+      checkUnlocks(); // Revisar si desbloqueó algo nuevo
+      
+      if (stardust >= 100) {
+        document.getElementById("fact-display").innerHTML = "<strong style='color: gold'>🌟 ¡Has desbloqueado la frecuencia 528Hz! 🌟</strong>";
+      }
+    });
+  }
+
+  // --- LÓGICA DE DESBLOQUEO DE PORTALES ---
+  function checkUnlocks() {
+    const links = document.querySelectorAll('.portal-grid a');
+    links.forEach(link => {
+      const text = link.innerText.toLowerCase();
+      let required = 0;
+      
+      if (text.includes('multiverso')) required = 50;
+      if (text.includes('keter') || text.includes('merkaba')) required = 100;
+
+      if (required > 0) {
+        if (stardust < required) {
+          link.style.filter = "blur(4px)";
+          link.style.opacity = "0.5";
+          link.style.pointerEvents = "none";
+          if (!link.innerHTML.includes("🔒")) {
+            link.innerHTML = `🔒 ${link.innerHTML} (Requiere ${required} ✨)`;
+          }
+        } else {
+          link.style.filter = "none";
+          link.style.opacity = "1";
+          link.style.pointerEvents = "auto";
+          link.innerHTML = link.innerHTML.replace(/🔒 .*? \(Requiere \d+ ✨\) /, '');
+        }
+      }
+    });
+  }
+  checkUnlocks();
+
+});
 });
