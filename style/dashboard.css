@@ -1,188 +1,75 @@
-/* ============================================
-   DASHBOARD — Panel personal del usuario
-   ============================================ */
 
-.dashboard {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem 5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+/* Ocultar los botones flotantes viejos para limpiar la pantalla */
+#btn-open-mandala, #btn-open-quiz, #btn-open-memoria, #btn-open-natal { display: none !important; }
+#audio-panel { display: none !important; } /* Ocultamos el panel de audio flotante, lo moveremos al Hub */
+
+/* Ocultar el reloj de la portada principal, lo pondremos dentro del Hub */
+#reloj-cabalistico { display: none !important; }
+
+/* El Grid del Dashboard */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
+/* Las Tarjetas de Cristal */
 .dash-card {
-  background: rgba(18, 18, 42, 0.65);
-  border: 1px solid var(--borde);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 20px;
-  padding: 2rem;
-  backdrop-filter: blur(14px);
-  transition: all 0.35s;
+  padding: 25px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
 }
 
 .dash-card:hover {
-  border-color: rgba(201, 162, 39, 0.5);
+  transform: translateY(-8px);
+  border-color: rgba(180, 100, 255, 0.5);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 20px rgba(180, 100, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
 }
 
-.dash-card.destacado {
-  background: linear-gradient(135deg, rgba(18, 18, 42, 0.7), rgba(201, 162, 39, 0.08));
-  border-color: rgba(201, 162, 39, 0.4);
-}
-
-.dash-card h2 {
-  font-family: var(--fuente-t);
-  font-size: 1.6rem;
-  color: #c9a227;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.nivel-badge {
-  display: block;
-  text-align: center;
-  font-family: var(--fuente-t);
+.dash-card .icon {
   font-size: 2.5rem;
-  color: #ffb703;
-  margin-bottom: 1.5rem;
-  text-shadow: 0 0 30px rgba(255, 183, 3, 0.5);
-}
-
-.dash-card .progreso-wrap {
-  margin: 1.5rem 0;
-}
-
-.dash-card .progreso-texto {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.dash-card .btn-primario {
+  margin-bottom: 15px;
   display: block;
-  margin: 0 auto;
-  text-align: center;
-  max-width: 260px;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
 }
 
-/* Grid de stats */
-.dash-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.25rem;
+.dash-card h3 {
+  font-family: 'Cinzel', serif;
+  color: #f2e6ff;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
-.dash-grid .dash-card {
-  text-align: center;
-  padding: 1.5rem 1rem;
-}
-
-.dash-grid .dash-card h3 {
-  font-size: 0.85rem;
-  font-family: var(--fuente);
-  color: var(--texto-2);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 0.75rem;
-  font-weight: 500;
-}
-
-.dash-num {
-  display: block;
-  font-family: var(--fuente-t);
-  font-size: 3rem;
-  color: #ffb703;
-  text-shadow: 0 0 25px rgba(255, 183, 3, 0.5);
-  line-height: 1;
-}
-
-/* Logros */
-.logros-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
-}
-
-.logro {
-  padding: 1.25rem 0.75rem;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(201, 162, 39, 0.15);
-  border-radius: 16px;
-  text-align: center;
-  opacity: 0.35;
-  filter: grayscale(100%);
-  transition: all 0.35s;
-  cursor: pointer;
-}
-
-.logro.activo {
-  opacity: 1;
-  filter: grayscale(0%);
-  border-color: #c9a227;
-  background: linear-gradient(135deg, rgba(201, 162, 39, 0.15), rgba(255, 183, 3, 0.08));
-  box-shadow: 0 0 25px rgba(201, 162, 39, 0.3);
-}
-
-.logro:hover {
-  transform: translateY(-4px) scale(1.05);
-}
-
-.logro span {
-  display: block;
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.logro p {
+.dash-card p {
   font-size: 0.8rem;
-  color: var(--texto-2);
-  font-weight: 500;
+  color: #a69bbd;
+  line-height: 1.5;
 }
 
-.logro.activo p {
-  color: #ffb703;
-}
-
-/* Acciones */
-.dash-acciones {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1rem;
-}
-
-.dash-acciones .btn-secundario {
-  text-align: center;
-  padding: 1rem;
-}
-
-/* Próximamente con emojis */
-.coming-dash {
-  text-align: center;
-  padding: 2rem;
-  border: 1px dashed rgba(123, 92, 255, 0.4);
+/* Contenedor interno para el audio y reloj dentro del Dashboard */
+.dash-inner-panel {
+  grid-column: 1 / -1;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(180, 100, 255, 0.2);
   border-radius: 20px;
-  background: rgba(123, 92, 255, 0.05);
-}
-
-.coming-dash h3 {
-  font-family: var(--fuente-t);
-  font-size: 1.4rem;
-  color: #b8a6ff;
-  margin-bottom: 1rem;
-}
-
-.coming-dash ul {
-  list-style: none;
-  padding: 0;
+  padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.75rem;
-  margin-top: 1rem;
-}
-
-.coming-dash li {
-  padding: 0.5rem 1rem;
-  background: rgba(123, 92, 255, 0.12);
-  border-radius: 999px;
-  font-size: 0.85rem;
-  color: var(--texto-2);
+  gap: 20px;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
 }

@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="style/memoria.css">
     <link rel="stylesheet" href="style/natal.css">
     <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.17/astronomy.browser.js"></script>
+    <link rel="stylesheet" href="style/dashboard.css">
 </head>
 <body>
 
@@ -134,6 +135,37 @@
 </div>
 
     <p class="subtitle">Astrología que nadie más tiene</p>
+
+<div class="dashboard-grid">
+    <div class="dash-card" id="dash-natal">
+        <span class="icon">🌌</span>
+        <h3>Mi Identidad</h3>
+        <p>Carta Natal astronómica exacta calculada con física orbital de la NASA.</p>
+    </div>
+    
+    <div class="dash-card" id="dash-mandala">
+        <span class="icon">🔮</span>
+        <h3>Mi Geometría Sagrada</h3>
+        <p>Genera tu Mandala único basado en tu Número de Camino de Vida.</p>
+    </div>
+
+    <div class="dash-card" id="dash-quiz">
+        <span class="icon">🧠</span>
+        <h3>Trivia Zodiacal</h3>
+        <p>Pon a prueba tus conocimientos astrológicos y gana Polvo de Estrella.</p>
+    </div>
+
+    <div class="dash-card" id="dash-memoria">
+        <span class="icon">🃏</span>
+        <h3>Memoria Estelar</h3>
+        <p>Encuentra los símbolos ocultos y entrena tu mente.</p>
+    </div>
+
+    <div class="dash-inner-panel" id="dash-media-container">
+        <!-- Aquí JavaScript inyectará el Reloj y el Reproductor de Audio -->
+    </div>
+</div>
+
 <h2>🔮 Herramientas Místicas</h2>
 <div class="portal-grid">
     <a href="herramientas/carta-natal.html" class="btn btn-primario pulso">
@@ -288,5 +320,6 @@
     <script src="js/reloj.js"></script>
     <script src="js/memoria.js"></script>
     <script src="js/natal.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 </html>
