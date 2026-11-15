@@ -1,0 +1,59 @@
+
+.donacion-widget {
+  background: linear-gradient(135deg, rgba(255,165,0,0.1), rgba(255,69,0,0.1));
+  border: 1px solid rgba(255,165,0,0.4);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.donacion-widget h4 { color: #ffa500; font-family: 'Cinzel', serif; margin-bottom: 10px; font-size: 1.1rem; }
+.donacion-widget p { font-size: 0.85rem; color: #d0c0b0; margin-bottom: 15px; }
+
+.progress-container {
+  width: 100%; height: 20px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255,165,0,0.3);
+}
+#food-progress {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, #ff8c00, #ffd700);
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+  box-shadow: 0 0 10px rgba(255,215,0,0.5);
+}
+#food-kg { font-weight: bold; color: #fff; font-size: 0.9rem; margin-bottom: 15px; display: block; }
+
+#btn-open-donacion {
+  background: linear-gradient(135deg, #ff8c00, #ff4500);
+  border: none; border-radius: 20px; padding: 12px 25px;
+  color: white; font-weight: bold; font-family: inherit;
+  cursor: pointer; transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(255,69,0,0.4);
+}
+#btn-open-donacion:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(255,69,0,0.6); }
+
+/* Modal de Donación */
+#donacion-modal {
+  display: none; position: fixed; inset: 0;
+  background: rgba(5,5,10,0.95); backdrop-filter: blur(10px);
+  z-index: 2500; align-items: center; justify-content: center;
+}
+.donacion-content {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,165,0,0.4);
+  padding: 30px; border-radius: 20px; width: 90%; max-width: 400px; text-align: center; color: #fff;
+  position: relative;
+}
+.donacion-content h2 { color: #ffa500; margin-bottom: 10px; }
+.donacion-content p { font-size: 0.9rem; color: #ccc; margin-bottom: 20px; line-height: 1.5; }
+.amount-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 20px; }
+.btn-donar-amount {
+  background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3);
+  color: #fff; padding: 15px 5px; border-radius: 10px; cursor: pointer; transition: 0.2s; font-weight: bold;
+}
+.btn-donar-amount:hover { background: rgba(255,165,0,0.3); border-color: #ffa500; }
+.btn-donar-amount span { display: block; font-size: 0.7rem; font-weight: normal; color: #aaa; margin-top: 5px; }

@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="style/dashboard.css">
     <link rel="stylesheet" href="style/extras.css">
     <link rel="stylesheet" href="style/multiverso.css">
+    <link rel="stylesheet" href="style/donacion.css">
 </head>
 <body>
 
@@ -333,6 +334,17 @@
           <span class="etiqueta">Donar</span>
         </a>
 </div>
+
+<div class="donacion-widget" style="width: 100%;">
+    <h4>🐱 El Plato de Yejidá</h4>
+    <p>Ayúdanos a alimentar a los gatitos callejeros. Cada donación es una promesa de vida.</p>
+    <div class="progress-container">
+        <div id="food-progress"></div>
+    </div>
+    <span id="food-kg">15 kg / 50 kg</span>
+    <button id="btn-open-donacion">🌟 Alimentar un Gatito</button>
+</div>
+
 </div>
 <script src="js/cosmos.js"></script>
 <script src="js/oraculo.js"></script>
@@ -391,5 +403,23 @@
 </div>
 
     <script src="js/multiverso.js"></script>
+
+<div id="donacion-modal">
+    <div class="donacion-content">
+        <button id="btn-close-donacion" style="position:absolute; top:10px; right:15px; background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">✖</button>
+        <h2>Ofrenda de Gratitud</h2>
+        <p>Tu donación no compra un producto, alimenta una vida. Elige tu grano de arena:</p>
+        
+        <div class="amount-grid">
+            <button class="btn-donar-amount" data-amount="1">$1 <span>1 día de comida</span></button>
+            <button class="btn-donar-amount" data-amount="5">$5 <span>1 semana</span></button>
+            <button class="btn-donar-amount" data-amount="10">$10 <span>Un mes</span></button>
+        </div>
+        
+        <p style="font-size:0.75rem; color:#888;">Serás redirigido a una pasarela segura.</p>
+    </div>
+</div>
+
+    <script src="js/donacion.js"></script>
 </body>
 </html>
