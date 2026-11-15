@@ -22,8 +22,36 @@
     <link rel="stylesheet" href="style/oraculo.css">
     <link rel="stylesheet" href="style/mandala.css">
     <link rel="stylesheet" href="style/audio.css">
+    <link rel="stylesheet" href="style/quiz.css">
 </head>
 <body>
+
+<button id="btn-open-quiz">🎮 Jugar Trivia</button>
+<div id="quiz-modal">
+    <div class="quiz-content">
+        <button id="btn-close-quiz">✖</button>
+        
+        <div id="quiz-start">
+            <h2>Trivia Zodiacal</h2>
+            <p style="font-size:0.9rem; color:#ccc; margin-bottom:15px;">Responde 5 preguntas correctamente para ganar Polvo de Estrella.</p>
+            <button id="btn-start-quiz" class="quiz-btn">Comenzar Desafío</button>
+        </div>
+
+        <div id="quiz-question" style="display:none;">
+            <div id="q-progress"></div>
+            <h3 id="q-text" style="font-size:1.1rem; margin-bottom:15px; line-height:1.4;"></h3>
+            <div id="q-options"></div>
+        </div>
+
+        <div id="quiz-result" style="display:none;">
+            <h2>¡Desafío Completado!</h2>
+            <h3 id="final-score" style="color:#ffa500; margin:15px 0;"></h3>
+            <p id="reward-text" style="font-weight:bold; color:#00ffcc;"></p>
+            <button id="btn-restart-quiz" class="quiz-btn">Jugar de Nuevo</button>
+        </div>
+    </div>
+</div>
+
 
 <div id="audio-panel">
   <h4>🎵 FRECUENCIAS SAGRADAS 🎵</h4>
@@ -218,5 +246,6 @@
 <script src="js/oraculo.js"></script>
     <script src="js/mandala.js"></script>
     <script src="js/audio.js"></script>
+    <script src="js/quiz.js"></script>
 </body>
 </html>
