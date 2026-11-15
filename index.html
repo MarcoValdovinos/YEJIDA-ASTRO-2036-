@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="style/donacion.css">
     <link rel="stylesheet" href="style/transitos.css">
     <link rel="stylesheet" href="style/arbol.css">
+    <link rel="stylesheet" href="style/curso.css">
 </head>
 <body>
 
@@ -198,6 +199,25 @@
         <span class="icon">🌳</span>
         <h3>Árbol de la Vida</h3>
         <p>Explora los 10 Sefirot, descubre tu Ángel Regente y tu Piedra sanadora.</p>
+    </div>
+
+    
+    <div class="dash-card" id="dash-curso" style="border-color: rgba(255,215,0,0.4);">
+        <span class="icon">📚</span>
+        <h3>Curso Nivel 1</h3>
+        <p>Aprende los fundamentos de la astrología y la geometría sagrada.</p>
+    </div>
+
+    <div class="dash-card" id="dash-ofiuco" style="border-color: rgba(255,255,255,0.4);">
+        <span class="icon">🐍</span>
+        <h3>Zodiaco 13 (Ofiuco)</h3>
+        <p>La constelación real que la astrología tradicional ignoró.</p>
+    </div>
+
+    <div class="dash-card" id="dash-meditacion" style="border-color: rgba(0,255,200,0.4);">
+        <span class="icon">🧘</span>
+        <h3>Hitbodedut</h3>
+        <p>Temporizador de meditación para conectar contigo mismo.</p>
     </div>
 
     <div class="dash-inner-panel" id="dash-media-container">
@@ -500,5 +520,48 @@
 </div>
 
     <script src="js/arbol.js"></script>
+
+<!-- Modal Curso -->
+<div id="curso-modal" class="modal-overlay">
+    <div class="modal-box" style="text-align:left;">
+        <button id="btn-close-curso" class="close-btn">✖</button>
+        <h2 style="text-align:center; color:#ffd700; margin-bottom:15px;">Curso Nivel 1</h2>
+        <button class="accordion-btn">Lección 1: ¿Qué es la Astrología?</button>
+        <div class="accordion-content"><p>La astrología es el estudio de la relación entre los astros y los eventos humanos. No es una ciencia exacta, sino un lenguaje simbólico que usa arquetipos para entender la psique humana (según Carl Jung).</p></div>
+        
+        <button class="accordion-btn">Lección 2: Los 4 Elementos</button>
+        <div class="accordion-content"><p>Fuego (acción), Tierra (estabilidad), Aire (pensamiento) y Agua (emoción). Cada signo pertenece a un elemento, lo que define su temperamento básico.</p></div>
+        
+        <button class="accordion-btn">Lección 3: ¿Qué es la Carta Natal?</button>
+        <div class="accordion-content"><p>Es una fotografía del cielo en el exacto momento y lugar de tu nacimiento. Muestra dónde estaban el Sol, la Luna y los planetas, revelando tu potencial de vida.</p></div>
+    </div>
+</div>
+
+<!-- Modal Ofiuco -->
+<div id="ofiuco-modal" class="modal-overlay">
+    <div class="modal-box">
+        <button id="btn-close-ofiuco" class="close-btn">✖</button>
+        <h2 style="color:#fff; margin-bottom:15px;">El 13er Signo: Ofiuco</h2>
+        <p style="font-size:0.9rem; line-height:1.6; text-align:left; color:#ccc;">
+            La astronomía moderna reconoce <strong>88 constelaciones</strong>. La eclíptica (el camino del Sol) pasa por 13 de ellas, no 12. La constelación de <strong>Ofiuco (El Portador de la Serpiente)</strong> fue eliminada de la astrología occidental hace 2000 años para ajustar el calendario a 12 meses perfectos.<br><br>
+            Si naciste entre el <strong>29 de noviembre y el 17 de diciembre</strong>, astronómicamente tu Sol está en Ofiuco, no en Sagitario.
+        </p>
+    </div>
+</div>
+
+<!-- Modal Meditación -->
+<div id="meditacion-modal" class="modal-overlay">
+    <div class="modal-box">
+        <button id="btn-close-meditacion" class="close-btn">✖</button>
+        <h2 style="color:#00ffcc; margin-bottom:5px;">Hitbodedut</h2>
+        <p style="font-size:0.85rem; color:#a69bbd;">Meditación de 5 minutos.</p>
+        <div class="timer-circle">
+            <div id="timer-display">5:00</div>
+        </div>
+        <button id="btn-start-meditacion" class="modal-btn" style="background:#00ffcc; color:#000;">Iniciar (5 min)</button>
+    </div>
+</div>
+
+    <script src="js/curso.js"></script>
 </body>
 </html>
