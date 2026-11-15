@@ -29,6 +29,7 @@
     <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.17/astronomy.browser.js"></script>
     <link rel="stylesheet" href="style/dashboard.css">
     <link rel="stylesheet" href="style/extras.css">
+    <link rel="stylesheet" href="style/multiverso.css">
 </head>
 <body>
 
@@ -173,6 +174,13 @@
         <span class="icon">🐱</span>
         <h3>Muro de Padrinos</h3>
         <p>Únete a la causa y deja tu nombre grabado en el universo Yejidá.</p>
+    </div>
+
+    
+    <div class="dash-card" id="dash-multiverso" style="grid-column: 1 / -1; border-color: rgba(0,255,200,0.5); background: linear-gradient(45deg, rgba(0,255,200,0.05), rgba(180,100,255,0.05));">
+        <span class="icon">🔒</span>
+        <h3>El Multiverso</h3>
+        <p>Portal secreto. Requiere 100 de Polvo de Estrella para desbloquear la Merkaba.</p>
     </div>
 
     <div class="dash-inner-panel" id="dash-media-container">
@@ -361,5 +369,27 @@
 
     <script src="js/sinastria.js"></script>
     <script src="js/padrinos.js"></script>
+
+<div id="multiverso-modal">
+    <button id="btn-close-multiverso" class="close-multiverso-btn">✖ Cerrar Portal</button>
+    <div class="scene">
+        <div class="merkaba">
+            <div class="tetrahedron tetrahedron-1">
+                <div class="face"></div><div class="face"></div><div class="face"></div>
+            </div>
+            <div class="tetrahedron tetrahedron-2">
+                <div class="face" style="border-bottom-color: rgba(0, 255, 200, 0.4); filter: drop-shadow(0 0 10px rgba(0, 255, 200, 0.8));"></div>
+                <div class="face" style="border-bottom-color: rgba(0, 255, 200, 0.4); filter: drop-shadow(0 0 10px rgba(0, 255, 200, 0.8));"></div>
+                <div class="face" style="border-bottom-color: rgba(0, 255, 200, 0.4); filter: drop-shadow(0 0 10px rgba(0, 255, 200, 0.8));"></div>
+            </div>
+        </div>
+    </div>
+    <div class="multiverso-text">
+        <div>FRECUENCIA 963 Hz ACTIVADA</div>
+        <div style="font-size:0.8rem; color:#a69bbd; margin-top:10px;">Sintonizando con la Geometría Sagrada</div>
+    </div>
+</div>
+
+    <script src="js/multiverso.js"></script>
 </body>
 </html>
