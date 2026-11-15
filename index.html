@@ -21,8 +21,23 @@
     <link rel="stylesheet" href="style/astral.css">
     <link rel="stylesheet" href="style/oraculo.css">
     <link rel="stylesheet" href="style/mandala.css">
+    <link rel="stylesheet" href="style/audio.css">
 </head>
 <body>
+
+<div id="audio-panel">
+  <h4>🎵 FRECUENCIAS SAGRADAS 🎵</h4>
+  <div id="current-freq">--- Hz</div>
+  <select id="freq-select">
+    <option value="432">432 Hz - Sintonía con la Tierra</option>
+    <option value="528">528 Hz - Reparación de ADN</option>
+    <option value="639">639 Hz - Conexión y Relaciones</option>
+    <option value="963">963 Hz - Conexión Divina</option>
+  </select>
+  <button id="btn-play-audio">▶ Iniciar Frecuencia</button>
+  <div id="audio-status">● SINTONIZANDO ONDA SENOIDAL PURA</div>
+</div>
+
 
 <div id="oraculo-hud">
   <h4>✦ ORÁCULO ASTRAL ✦</h4>
@@ -202,5 +217,6 @@
 <script src="js/cosmos.js"></script>
 <script src="js/oraculo.js"></script>
     <script src="js/mandala.js"></script>
+    <script src="js/audio.js"></script>
 </body>
 </html>
