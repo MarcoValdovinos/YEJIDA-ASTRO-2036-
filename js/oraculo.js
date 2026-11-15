@@ -1,20 +1,14 @@
+
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Cálculo Real de la Fase Lunar (Algoritmo de Conway)
   const calculateMoonPhase = () => {
     const now = new Date();
-    const year = now.getFullYear();
-    const month = now.getMonth() + 1;
-    const day = now.getDate();
-    
-    let r = year % 100;
-    r %= 19;
+    let r = now.getFullYear() % 100; r %= 19;
     if (r > 9) r -= 19;
-    r = ((r * 11) % 30) + month + day;
-    if (month < 3) r += 2;
-    r -= ((year < 2000) ? 4 : 8.3);
+    r = ((r * 11) % 30) + (now.getMonth() + 1) + now.getDate();
+    if (now.getMonth() + 1 < 3) r += 2;
+    r -= ((now.getFullYear() < 2000) ? 4 : 8.3);
     r = Math.floor(r + 0.5) % 30;
     if (r < 0) r += 30;
-    
     if (r < 1) return "🌑 Luna Nueva";
     if (r < 7) return "🌒 Luna Creciente";
     if (r < 8) return "🌓 Cuarto Creciente";
@@ -26,11 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return "🌑 Luna Nueva";
   };
 
-  // 2. Cálculo del Signo Solar Real
   const getZodiacSign = () => {
     const now = new Date();
-    const m = now.getMonth() + 1;
-    const d = now.getDate();
+    const m = now.getMonth() + 1; const d = now.getDate();
     if ((m == 1 && d >= 20) || (m == 2 && d <= 18)) return "♒ Acuario";
     if ((m == 2 && d >= 19) || (m == 3 && d <= 20)) return "♓ Piscis";
     if ((m == 3 && d >= 21) || (m == 4 && d <= 19)) return "♈ Aries";
@@ -45,11 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return "♑ Capricornio";
   };
 
-  // Actualizar la interfaz
   document.getElementById("moon-phase").innerText = calculateMoonPhase();
   document.getElementById("sun-sign").innerText = getZodiacSign();
 
-  // 3. Gamificación y Datos Astronómicos Reales
   const facts = [
     "La luz del Sol tarda 8 minutos y 20 segundos en llegar a la Tierra.",
     "La Luna se aleja de la Tierra 3.8 centímetros cada año.",
@@ -67,25 +57,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const btn = document.getElementById("btn-stardust");
   const display = document.getElementById("fact-display");
   const counter = document.getElementById("stardust-count");
-
   counter.innerText = stardust;
 
   btn.addEventListener("click", () => {
-    stardust += Math.floor(Math.random() * 5) + 1; // Da entre 1 y 5 puntos
+    stardust += Math.floor(Math.random() * 5) + 1;
     localStorage.setItem("stardust_y", stardust);
     counter.innerText = stardust;
-
-    // Efecto de texto
-    const randomFact = facts[Math.floor(Math.random() * facts.length)];
-    display.innerText = randomFact;
-    display.style.opacity = 1;
+    display.innerText = facts[Math.floor(Math.random() * facts.length)];
     
-    // Efecto de vibración en el botón
     btn.style.transform = "scale(0.9)";
     setTimeout(() => btn.style.transform = "scale(1)", 150);
 
     if (stardust >= 100) {
-      display.innerHTML = "<strong style='color: gold'>🌟 ¡Has desbloqueado la frecuencia 528Hz! 🌟</strong><br>Has sintonizado con el pulso de la Tierra (Resonancia de Schumann).";
+      display.innerHTML = "<strong style='color: gold'>🌟 ¡Has desbloqueado la frecuencia 528Hz! 🌟</strong><br>Has sintonizado con el pulso de la Tierra.";
     }
   });
 });
