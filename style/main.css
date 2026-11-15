@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background-color: #05050a;
+  color: #e0e0e0;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#cosmos {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: -1;
+}
+
+h1, h2, h3 { font-family: 'Cinzel', serif; color: #fff; margin-bottom: 20px; text-align: center; }
+h1 { font-size: 2.5rem; text-shadow: 0 0 20px rgba(138,43,226,0.8); }
+
+/* Magia: Convertir los enlaces amontonados en botones de cristal */
+a {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 8px;
+  color: #fff;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+a:hover {
+  background: rgba(138, 43, 226, 0.2);
+  border-color: rgba(138, 43, 226, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5), 0 0 15px rgba(138,43,226,0.4);
+  color: #fff;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}

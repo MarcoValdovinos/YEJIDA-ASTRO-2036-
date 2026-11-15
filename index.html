@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="stylesheet" href="style/main.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Yejidá Astro Avanzado — Astrología cabalística real, 88 constelaciones, 13 signos, sistema propio de 41 ramas. Cada donación alimenta gatitos callejeros.">
@@ -19,6 +20,8 @@
   <link rel="icon" href="assets/iconos/favicon.svg" type="image/svg+xml">
 </head>
 <body>
+    <canvas id="cosmos"></canvas>
+    <div class="container">
 
   <header id="header"></header>
 
@@ -271,5 +274,7 @@
       navigator.serviceWorker.register("service-worker.js");
     }
   </script>
+    </div>
+    <script src="js/cosmos.js"></script>
 </body>
 </html>
