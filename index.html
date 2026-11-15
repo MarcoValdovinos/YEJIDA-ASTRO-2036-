@@ -563,5 +563,16 @@
 </div>
 
     <script src="js/curso.js"></script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./service-worker.js').then(reg => {
+        reg.update(); // Forzar búsqueda de nuevas versiones
+      }).catch(err => console.log('SW error:', err));
+    });
+  }
+</script>
+
 </body>
 </html>
