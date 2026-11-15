@@ -19,8 +19,20 @@
   <link rel="stylesheet" href="style/hub.css">
   <link rel="icon" href="assets/iconos/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style/astral.css">
+    <link rel="stylesheet" href="style/oraculo.css">
 </head>
 <body>
+
+<div id="oraculo-hud">
+  <h4>✦ ORÁCULO ASTRAL ✦</h4>
+  <div style="font-size: 0.9rem;">
+    <div id="moon-phase" style="margin-bottom: 5px;"></div>
+    <div id="sun-sign"></div>
+  </div>
+  <button id="btn-stardust">Recoger Polvo de Estrella</button>
+  <div id="fact-display">Toca el botón para recibir sabiduría estelar. (Puntos: <span id="stardust-count">0</span>/100)</div>
+</div>
+
     <canvas id="cosmos"></canvas>
     <div class="container">
 
@@ -277,5 +289,6 @@
   </script>
     </div>
     <script src="js/cosmos.js"></script>
+    <script src="js/oraculo.js"></script>
 </body>
 </html>
