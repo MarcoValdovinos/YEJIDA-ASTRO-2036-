@@ -1,0 +1,60 @@
+/* HUD del Oráculo */
+#oraculo-hud {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(15, 10, 25, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(180, 100, 255, 0.3);
+  border-radius: 16px;
+  padding: 15px 20px;
+  color: #e6e1f5;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  z-index: 1000;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+#oraculo-hud h4 {
+  margin: 0 0 10px 0;
+  color: #d7b4ff;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+#oraculo-hud span { font-weight: bold; color: #fff; }
+
+#btn-stardust {
+  margin-top: 15px;
+  background: linear-gradient(135deg, rgba(138,43,226,0.4), rgba(75,0,130,0.4));
+  border: 1px solid rgba(180, 100, 255, 0.5);
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.2s;
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+#btn-stardust:hover { background: rgba(138,43,226,0.7); box-shadow: 0 0 15px rgba(138,43,226,0.5); }
+
+#fact-display {
+  margin-top: 15px;
+  font-size: 0.75rem;
+  color: #a69bbd;
+  max-width: 200px;
+  line-height: 1.4;
+  opacity: 0.8;
+  transition: opacity 0.5s;
+}
+
+/* Ocultar en móviles muy pequeños para no tapar el contenido */
+@media (max-width: 600px) {
+  #oraculo-hud { top: auto; bottom: 10px; right: 10px; left: 10px; padding: 10px; }
+  #fact-display { max-width: 100%; }
+}
