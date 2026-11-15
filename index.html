@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="style/arbol.css">
     <link rel="stylesheet" href="style/curso.css">
     <link rel="stylesheet" href="style/pq_numerology.css">
+    <link rel="stylesheet" href="style/perfil.css">
 </head>
 <body>
 
@@ -226,6 +227,13 @@
         <span class="icon">⚛️</span>
         <h3>Numerología Post-Cuántica</h3>
         <p>Fusión de numerología pitagórica con criptografía de retículos (Lattice-based).</p>
+    </div>
+
+    
+    <div class="dash-card" id="dash-perfil" style="border-color: rgba(215,180,255,0.6);">
+        <span class="icon">👤</span>
+        <h3>Mi Progreso</h3>
+        <p>Revisa tu rango actual, tu racha diaria y los logros que has desbloqueado.</p>
     </div>
 
     <div class="dash-inner-panel" id="dash-media-container">
@@ -619,5 +627,38 @@
 </div>
 
     <script src="js/pq_numerology.js"></script>
+
+<div id="perfil-modal">
+    <div class="perfil-content">
+        <button id="btn-close-perfil" style="position:absolute; top:10px; right:15px; background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">✖</button>
+        <h2 style="font-size:1rem; color:#a69bbd; letter-spacing:2px;">ESTADO DEL INICIADO</h2>
+        
+        <div id="perfil-rank">Iniciado</div>
+        <div id="perfil-streak" style="font-size:0.9rem; color:#ffa500; font-weight:bold;"></div>
+        
+        <div class="progress-bar-container">
+            <div id="perfil-progress"></div>
+        </div>
+        <div id="perfil-points" style="font-size:0.85rem; color:#ccc;"></div>
+
+        <h3 style="margin-top:30px; font-size:0.9rem; color:#fff;">Medallas de Acción</h3>
+        <div class="badges-grid">
+            <div>
+                <div id="badge-mandala" class="badge locked">🔮</div>
+                <span class="badge-label">Geómetra</span>
+            </div>
+            <div>
+                <div id="badge-natal" class="badge locked">🌌</div>
+                <span class="badge-label">Astrónomo</span>
+            </div>
+            <div>
+                <div id="badge-play" class="badge locked">🎮</div>
+                <span class="badge-label">Jugador</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="js/perfil.js"></script>
 </body>
 </html>
