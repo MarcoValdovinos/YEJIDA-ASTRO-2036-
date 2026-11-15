@@ -25,8 +25,28 @@
     <link rel="stylesheet" href="style/quiz.css">
     <link rel="stylesheet" href="style/reloj.css">
     <link rel="stylesheet" href="style/memoria.css">
+    <link rel="stylesheet" href="style/natal.css">
+    <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.17/astronomy.browser.js"></script>
 </head>
 <body>
+
+<button id="btn-open-natal">🌌 Mi Carta Astral</button>
+<div id="natal-modal">
+    <div class="natal-content">
+        <button id="btn-close-natal" style="float:right; background:none; border:none; color:#fff; font-size:1.2rem; cursor:pointer;">✖</button>
+        <h2 style="color:#ff66cc;">Carta Natal Astronómica</h2>
+        <p style="font-size:0.8rem; color:#a69bbd;">Calculada con física orbital (NASA). Ingresa tu fecha y hora exacta.</p>
+        <div class="natal-inputs">
+            <input type="date" id="natal-date">
+            <input type="time" id="natal-time">
+        </div>
+        <button id="btn-calc-natal" style="margin-top:15px; padding:10px 20px; background:#ff66cc; border:none; border-radius:8px; font-weight:bold; cursor:pointer; color:#fff; width:100%;">Calcular Cielo</button>
+        
+        <svg id="natal-wheel" viewBox="0 0 300 300"></svg>
+        <div id="natal-result" style="margin-top:10px;"></div>
+    </div>
+</div>
+
 
 <button id="btn-open-memoria">🃏 Memoria Estelar</button>
 <div id="memoria-modal">
@@ -267,5 +287,6 @@
     <script src="js/quiz.js"></script>
     <script src="js/reloj.js"></script>
     <script src="js/memoria.js"></script>
+    <script src="js/natal.js"></script>
 </body>
 </html>

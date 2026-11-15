@@ -1,0 +1,24 @@
+
+#btn-open-natal {
+  position: fixed; bottom: 140px; right: 20px;
+  background: linear-gradient(135deg, rgba(255,0,100,0.8), rgba(150,0,50,0.8));
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white; padding: 15px 25px; border-radius: 30px;
+  font-family: 'Montserrat', sans-serif; font-weight: bold;
+  cursor: pointer; z-index: 1000; box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  transition: all 0.3s ease;
+}
+#btn-open-natal:hover { transform: scale(1.05); }
+#natal-modal {
+  display: none; position: fixed; inset: 0;
+  background: rgba(5, 5, 10, 0.95); backdrop-filter: blur(10px);
+  z-index: 2000; align-items: center; justify-content: center; flex-direction: column;
+}
+.natal-content {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,0,100,0.3);
+  padding: 20px; border-radius: 20px; width: 90%; max-width: 500px; text-align: center; color: #fff;
+  max-height: 90vh; overflow-y: auto;
+}
+.natal-inputs input { margin: 5px; padding: 8px; border-radius: 8px; border: 1px solid #ff66cc; background: #111; color: #fff; }
+#natal-wheel { width: 100%; max-width: 300px; height: auto; margin: 15px auto; display: block; border-radius: 50%; box-shadow: 0 0 30px rgba(255,0,100,0.2);}
+#natal-result ul { list-style: none; padding: 0; text-align: left; font-size: 0.85rem; line-height: 1.6; }
