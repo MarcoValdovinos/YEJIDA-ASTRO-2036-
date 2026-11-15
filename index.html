@@ -20,8 +20,23 @@
   <link rel="icon" href="assets/iconos/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style/astral.css">
     <link rel="stylesheet" href="style/oraculo.css">
+    <link rel="stylesheet" href="style/mandala.css">
 </head>
 <body>
+
+<button id="btn-open-mandala">🔮 Descubrir mi Mandala</button>
+<div id="mandala-modal">
+    <div class="modal-content">
+        <button id="btn-close-mandala">✖</button>
+        <h2 style="font-size:1.5rem; margin-bottom:10px;">El Oráculo Geométrico</h2>
+        <p style="font-size:0.85rem; color:#a69bbd;">Ingresa tu fecha de nacimiento para calcular tu Número de Vida y generar tu firma astral.</p>
+        <input type="date" id="birthdate">
+        <button id="btn-generate">Generar Mandala Único</button>
+        <div id="mandala-result" style="margin-top:15px; font-size:1.1rem; color:#d7b4ff;"></div>
+        <svg id="mandala-svg" viewBox="0 0 500 500"></svg>
+    </div>
+</div>
+
 
 <canvas id="cosmos"></canvas>
 <div class="container" style="padding-top: 30px;">
@@ -175,5 +190,6 @@
 </div>
 <script src="js/cosmos.js"></script>
 <script src="js/oraculo.js"></script>
+    <script src="js/mandala.js"></script>
 </body>
 </html>

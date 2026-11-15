@@ -1,0 +1,38 @@
+/* Botón flotante para abrir el mandala */
+#btn-open-mandala {
+  position: fixed; bottom: 20px; left: 20px;
+  background: linear-gradient(135deg, rgba(75,0,130,0.8), rgba(138,43,226,0.8));
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white; padding: 15px 25px; border-radius: 30px;
+  font-family: 'Montserrat', sans-serif; font-weight: bold;
+  cursor: pointer; z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5), 0 0 20px rgba(138,43,226,0.4);
+  transition: all 0.3s ease;
+}
+#btn-open-mandala:hover { transform: scale(1.05); }
+
+/* Modal */
+#mandala-modal {
+  display: none; position: fixed; inset: 0;
+  background: rgba(5, 5, 10, 0.9); backdrop-filter: blur(10px);
+  z-index: 2000; align-items: center; justify-content: center; flex-direction: column;
+}
+#mandala-modal .modal-content {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+  padding: 30px; border-radius: 20px; width: 90%; max-width: 500px;
+  text-align: center; position: relative;
+}
+#btn-close-mandala {
+  position: absolute; top: 10px; right: 15px;
+  background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer;
+}
+#birthdate {
+  width: 100%; padding: 12px; margin: 15px 0;
+  background: rgba(0,0,0,0.3); border: 1px solid rgba(180,100,255,0.5);
+  border-radius: 8px; color: #fff; font-family: inherit;
+}
+#btn-generate {
+  width: 100%; padding: 12px; background: #8a2be2; color: white;
+  border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-family: inherit;
+}
+#mandala-svg { width: 100%; max-width: 300px; height: auto; margin: 20px auto; display: block; }
