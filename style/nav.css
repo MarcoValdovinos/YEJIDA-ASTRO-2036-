@@ -1,0 +1,54 @@
+
+#bottom-nav {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 65px;
+  background: rgba(10, 5, 20, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-top: 1px solid rgba(180, 100, 255, 0.3);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 4000;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.5);
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #a69bbd;
+  text-decoration: none;
+  font-size: 0.65rem;
+  font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 25%;
+}
+
+.nav-item .nav-icon { font-size: 1.4rem; margin-bottom: 3px; transition: 0.3s; }
+.nav-item:hover, .nav-item.active { color: #d7b4ff; }
+.nav-item.active .nav-icon { transform: translateY(-3px); text-shadow: 0 0 10px #d7b4ff; }
+
+/* Dar espacio al final del body para que la barra no tape el contenido */
+body { padding-bottom: 80px !important; }
+
+/* Botón de volver en los modales */
+.btn-back {
+  position: absolute;
+  top: 15px; left: 15px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  z-index: 10;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.btn-back:hover { background: rgba(255,255,255,0.3); }
