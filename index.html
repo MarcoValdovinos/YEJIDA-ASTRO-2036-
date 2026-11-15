@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="style/transitos.css">
     <link rel="stylesheet" href="style/arbol.css">
     <link rel="stylesheet" href="style/curso.css">
+    <link rel="stylesheet" href="style/pq_numerology.css">
 </head>
 <body>
 
@@ -218,6 +219,13 @@
         <span class="icon">🧘</span>
         <h3>Hitbodedut</h3>
         <p>Temporizador de meditación para conectar contigo mismo.</p>
+    </div>
+
+    
+    <div class="dash-card" id="dash-pq-num" style="border-color: rgba(0,255,200,0.6); background: linear-gradient(45deg, rgba(0,255,200,0.05), rgba(0,0,0,0));">
+        <span class="icon">⚛️</span>
+        <h3>Numerología Post-Cuántica</h3>
+        <p>Fusión de numerología pitagórica con criptografía de retículos (Lattice-based).</p>
     </div>
 
     <div class="dash-inner-panel" id="dash-media-container">
@@ -574,5 +582,42 @@
   }
 </script>
 
+
+<div id="pq-num-modal">
+    <div class="pq-content">
+        <button id="btn-close-pq-num" style="position:absolute; top:10px; right:15px; background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">✖</button>
+        <h2>SYCRO // PQ-Numerology</h2>
+        <p style="font-size:0.75rem; color:#888; margin-bottom:15px;">Generador de Firmas de Entrelazamiento Cuántico</p>
+        
+        <input type="text" id="pq-name" class="pq-input" placeholder="Tu nombre completo...">
+        <input type="date" id="pq-date" class="pq-input">
+        <button id="btn-calc-pq-num" class="pq-btn">Calcular Vector de Estado</button>
+
+        <div id="pq-num-result">
+            <div class="pq-data-row">
+                <span class="pq-label">Camino de Vida (Pitagórico):</span>
+                <span id="pq-life-path" class="pq-value big">--</span>
+            </div>
+            <div class="pq-data-row">
+                <span class="pq-label">Resonancia:</span>
+                <span id="pq-resonance" class="pq-value">--</span>
+            </div>
+            <div class="pq-data-row">
+                <span class="pq-label">Firma SHA-256:</span>
+                <span id="pq-hash" class="pq-value" style="font-size:0.8rem; word-break: break-all;">--</span>
+            </div>
+            <div class="pq-data-row">
+                <span class="pq-label">Vector de Retículo [X:Y]:</span>
+                <span id="pq-vector" class="pq-value">--</span>
+            </div>
+            <div class="pq-data-row" style="border:none;">
+                <span class="pq-label">Fase Cuántica:</span>
+                <span id="pq-phase" class="pq-value">--</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="js/pq_numerology.js"></script>
 </body>
 </html>
