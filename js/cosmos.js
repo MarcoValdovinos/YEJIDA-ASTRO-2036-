@@ -1,32 +1,40 @@
 const canvas = document.getElementById('cosmos');
 const ctx = canvas.getContext('2d');
-let width, height, particles;
+let width, height, stars;
 
 function resize() {
   width = canvas.width = window.innerWidth;
   height = canvas.height = window.innerHeight;
 }
-
 window.addEventListener('resize', resize);
 resize();
 
-particles = Array.from({ length: 100 }, () => ({
+stars = Array.from({ length: 150 }, () => ({
   x: Math.random() * width,
   y: Math.random() * height,
-  z: Math.random() * 2 + 0.1,
-  vx: (Math.random() - 0.5) * 0.5,
-  vy: (Math.random() - 0.5) * 0.5
+  radius: Math.random() * 1.5,
+  alpha: Math.random(),
+  speed: (Math.random() * 0.02) + 0.01,
+  vx: (Math.random() - 0.5) * 0.2,
+  vy: (Math.random() - 0.5) * 0.2
 }));
 
 function animate() {
   ctx.clearRect(0, 0, width, height);
-  ctx.fillStyle = 'rgba(138, 43, 226, 0.4)'; // Color púrpura astral
-  particles.forEach(p => {
-    p.x += p.vx; p.y += p.vy;
-    if (p.x < 0 || p.x > width) p.vx *= -1;
-    if (p.y < 0 || p.y > height) p.vy *= -1;
+  stars.forEach(s => {
+    s.x += s.vx;
+    s.y += s.vy;
+    s.alpha += s.speed;
+    if (s.alpha > 1 || s.alpha < 0) s.speed *= -1;
+    
+    if (s.x < 0) s.x = width;
+    if (s.x > width) s.x = 0;
+    if (s.y < 0) s.y = height;
+    if (s.y > height) s.y = 0;
+
     ctx.beginPath();
-    ctx.arc(p.x, p.y, p.z, 0, Math.PI * 2);
+    ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(215, 180, 255, ${s.alpha})`; // Tono lila estelar
     ctx.fill();
   });
   requestAnimationFrame(animate);
