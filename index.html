@@ -23,8 +23,21 @@
     <link rel="stylesheet" href="style/mandala.css">
     <link rel="stylesheet" href="style/audio.css">
     <link rel="stylesheet" href="style/quiz.css">
+    <link rel="stylesheet" href="style/reloj.css">
+    <link rel="stylesheet" href="style/memoria.css">
 </head>
 <body>
+
+<button id="btn-open-memoria">🃏 Memoria Estelar</button>
+<div id="memoria-modal">
+    <div class="memoria-content">
+        <h2 style="color:#00aaff;">Memoria Estelar</h2>
+        <p id="memoria-moves" style="font-weight:bold; margin-bottom:10px;">Movimientos: 0</p>
+        <div id="memoria-grid"></div>
+        <button id="btn-close-memoria" style="background:#444;color:#fff;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;">Cerrar</button>
+    </div>
+</div>
+
 
 <button id="btn-open-quiz">🎮 Jugar Trivia</button>
 <div id="quiz-modal">
@@ -95,6 +108,11 @@
 <canvas id="cosmos"></canvas>
 <div class="container" style="padding-top: 30px;">
     <h1>✦ Quinta Esencia · 2036 ✦</h1>
+
+<div id="reloj-cabalistico">
+    <div id="planet-clock"></div>
+</div>
+
     <p class="subtitle">Astrología que nadie más tiene</p>
 <h2>🔮 Herramientas Místicas</h2>
 <div class="portal-grid">
@@ -247,5 +265,7 @@
     <script src="js/mandala.js"></script>
     <script src="js/audio.js"></script>
     <script src="js/quiz.js"></script>
+    <script src="js/reloj.js"></script>
+    <script src="js/memoria.js"></script>
 </body>
 </html>
