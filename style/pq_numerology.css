@@ -1,0 +1,33 @@
+
+#pq-num-modal {
+  display: none; position: fixed; inset: 0;
+  background: rgba(5,5,10,0.95); backdrop-filter: blur(10px);
+  z-index: 2000; align-items: center; justify-content: center;
+}
+.pq-content {
+  background: rgba(0, 0, 0, 0.8); border: 1px solid rgba(0, 255, 200, 0.4);
+  padding: 25px; border-radius: 20px; width: 90%; max-width: 450px; text-align: center; color: #fff;
+  box-shadow: 0 0 30px rgba(0, 255, 200, 0.1);
+  font-family: 'Montserrat', sans-serif;
+}
+.pq-content h2 { color: #00ffcc; font-family: 'Cinzel', serif; margin-bottom: 5px; text-shadow: 0 0 10px rgba(0,255,200,0.5); }
+.pq-input {
+  width: 100%; padding: 12px; margin: 8px 0; border-radius: 8px;
+  border: 1px solid rgba(0, 255, 200, 0.5); background: rgba(0,0,0,0.5); color: #fff; font-family: inherit;
+}
+.pq-btn {
+  width: 100%; padding: 12px; background: linear-gradient(135deg, #00ffcc, #0088ff);
+  border: none; border-radius: 8px; color: #000; font-weight: bold; cursor: pointer; margin-top: 10px;
+  transition: 0.3s;
+}
+.pq-btn:hover { box-shadow: 0 0 20px rgba(0, 255, 200, 0.6); transform: scale(1.02); }
+
+/* Panel de resultados tipo terminal */
+#pq-num-result {
+  display: none; margin-top: 20px; background: rgba(0, 255, 200, 0.05);
+  border: 1px dashed rgba(0, 255, 200, 0.4); padding: 15px; border-radius: 10px; text-align: left;
+}
+.pq-data-row { display: flex; justify-content: space-between; margin-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
+.pq-label { font-size: 0.8rem; color: #888; }
+.pq-value { font-family: monospace; color: #00ffcc; font-weight: bold; font-size: 1rem; }
+.pq-value.big { font-size: 1.5rem; color: #fff; text-shadow: 0 0 10px #00ffcc; }
