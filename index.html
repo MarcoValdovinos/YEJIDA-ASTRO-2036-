@@ -32,6 +32,7 @@
     <link rel="stylesheet" href="style/multiverso.css">
     <link rel="stylesheet" href="style/donacion.css">
     <link rel="stylesheet" href="style/transitos.css">
+    <link rel="stylesheet" href="style/arbol.css">
 </head>
 <body>
 
@@ -190,6 +191,13 @@
         <span class="icon">🌌</span>
         <h3>Mapa Estelar (Hoy)</h3>
         <p>Observa la posición astronómica real de los planetas en este exacto momento.</p>
+    </div>
+
+    
+    <div class="dash-card" id="dash-arbol" style="border-color: rgba(215,180,255,0.4);">
+        <span class="icon">🌳</span>
+        <h3>Árbol de la Vida</h3>
+        <p>Explora los 10 Sefirot, descubre tu Ángel Regente y tu Piedra sanadora.</p>
     </div>
 
     <div class="dash-inner-panel" id="dash-media-container">
@@ -441,5 +449,56 @@
 </div>
 
     <script src="js/transitos.js"></script>
+
+<div id="arbol-modal">
+    <div class="arbol-content">
+        <button id="btn-close-arbol" style="position:absolute; top:10px; right:15px; background:none; border:none; color:#fff; font-size:1.5rem; cursor:pointer;">✖</button>
+        <h2 style="color:#d7b4ff; font-family:'Cinzel', serif;">El Árbol de la Vida</h2>
+        <p style="font-size:0.8rem; color:#a69bbd;">Toca cada esfera para descubrir su energía.</p>
+        
+        <div class="arbol-layout">
+            <div class="arbol-svg-container">
+                
+<svg viewBox="0 0 200 300" width="100%" class="sefira-node" xmlns="http://www.w3.org/2000/svg">
+    <!-- Líneas conectoras -->
+    <g stroke="rgba(180,100,255,0.4)" stroke-width="2">
+        <line x1="100" y1="30" x2="50" y2="80" /><line x1="100" y1="30" x2="150" y2="80" />
+        <line x1="50" y1="80" x2="150" y2="80" />
+        <line x1="50" y1="80" x2="50" y2="150" /><line x1="50" y1="80" x2="100" y2="150" />
+        <line x1="150" y1="80" x2="150" y2="150" /><line x1="150" y1="80" x2="100" y2="150" />
+        <line x1="50" y1="150" x2="50" y2="220" /><line x1="50" y1="150" x2="100" y2="220" />
+        <line x1="150" y1="150" x2="150" y2="220" /><line x1="150" y1="150" x2="100" y2="220" />
+        <line x1="50" y1="220" x2="100" y2="270" /><line x1="150" y1="220" x2="100" y2="270" />
+        <line x1="100" y1="150" x2="100" y2="220" />
+    </g>
+    <!-- Nodos (Círculos) -->
+    <circle id="keter" cx="100" cy="30" r="12" fill="#fff" />
+    <circle id="jokmah" cx="50" cy="80" r="12" fill="#00ccff" />
+    <circle id="binah" cx="150" cy="80" r="12" fill="#996633" />
+    <circle id="jesed" cx="50" cy="150" r="12" fill="#3366ff" />
+    <circle id="geburah" cx="150" cy="150" r="12" fill="#ff3300" />
+    <circle id="tiferet" cx="100" cy="150" r="12" fill="#ffcc00" />
+    <circle id="netzach" cx="50" cy="220" r="12" fill="#00ff64" />
+    <circle id="hod" cx="150" cy="220" r="12" fill="#ff9900" />
+    <circle id="yesod" cx="100" cy="220" r="12" fill="#ff66cc" />
+    <circle id="maljut" cx="100" cy="270" r="12" fill="#a6a6a6" />
+</svg>
+
+            </div>
+            <div class="info-panel" id="sefira-info">
+                <p style="color:#888; font-style:italic;">Selecciona un Sefirá en el árbol...</p>
+            </div>
+        </div>
+
+        <div class="mistic-calc">
+            <h3 style="color:#fff; margin-bottom:10px; font-size:1.1rem;">Calcula tu Ángel y Piedra</h3>
+            <input type="date" id="mistic-date" class="mistic-input">
+            <button id="btn-calc-mistico" class="mistic-btn">Revelar</button>
+            <div id="mistic-result"></div>
+        </div>
+    </div>
+</div>
+
+    <script src="js/arbol.js"></script>
 </body>
 </html>
