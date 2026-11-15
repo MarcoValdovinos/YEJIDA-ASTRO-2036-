@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="style/natal.css">
     <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.17/astronomy.browser.js"></script>
     <link rel="stylesheet" href="style/dashboard.css">
+    <link rel="stylesheet" href="style/extras.css">
 </head>
 <body>
 
@@ -159,6 +160,19 @@
         <span class="icon">🃏</span>
         <h3>Memoria Estelar</h3>
         <p>Encuentra los símbolos ocultos y entrena tu mente.</p>
+    </div>
+
+    
+    <div class="dash-card" id="dash-sinastria" style="border-color: rgba(255,0,100,0.4);">
+        <span class="icon">❤️</span>
+        <h3>Mi Conexión</h3>
+        <p>Calcula tu compatibilidad astronómica (Sinastría) con otra persona.</p>
+    </div>
+
+    <div class="dash-card" id="dash-padrinos" style="border-color: rgba(255,165,0,0.4);">
+        <span class="icon">🐱</span>
+        <h3>Muro de Padrinos</h3>
+        <p>Únete a la causa y deja tu nombre grabado en el universo Yejidá.</p>
     </div>
 
     <div class="dash-inner-panel" id="dash-media-container">
@@ -321,5 +335,31 @@
     <script src="js/memoria.js"></script>
     <script src="js/natal.js"></script>
     <script src="js/dashboard.js"></script>
+
+<div id="sinastria-modal" class="modal-overlay">
+    <div class="modal-box">
+        <button id="btn-close-sinastria" class="close-btn">✖</button>
+        <h2 style="color:#ff66cc;">Sinastría Orbital</h2>
+        <p style="font-size:0.8rem; color:#a69bbd; margin-bottom:15px;">Descubre la geometría de tu relación.</p>
+        <input type="date" id="sin-date1" class="modal-input" placeholder="Tu fecha">
+        <input type="date" id="sin-date2" class="modal-input" placeholder="Su fecha">
+        <button id="btn-calc-sinastria" class="modal-btn">Calcular Alineación</button>
+        <div id="sin-result" style="display:none; margin-top:20px; background:rgba(0,0,0,0.4); padding:15px; border-radius:12px;"></div>
+    </div>
+</div>
+
+<div id="padrinos-modal" class="modal-overlay">
+    <div class="modal-box">
+        <button id="btn-close-padrinos" class="close-btn">✖</button>
+        <h2 style="color:#ffa500;">Muro de Protectores</h2>
+        <p style="font-size:0.8rem; color:#a69bbd;">Cada granito de arena alimenta a los gatitos callejeros.</p>
+        <input type="text" id="padrino-name" class="modal-input" placeholder="Escribe tu nombre o alias...">
+        <button id="btn-add-padrino" class="modal-btn" style="background:linear-gradient(135deg, #ff8c00, #ff4500);">Firmar el Muro</button>
+        <ul id="padrinos-list"></ul>
+    </div>
+</div>
+
+    <script src="js/sinastria.js"></script>
+    <script src="js/padrinos.js"></script>
 </body>
 </html>

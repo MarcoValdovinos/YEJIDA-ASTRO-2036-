@@ -1,0 +1,11 @@
+
+/* Estilos compartidos para los nuevos modales */
+.modal-overlay { display:none; position: fixed; inset: 0; background: rgba(5,5,10,0.95); backdrop-filter: blur(10px); z-index: 2000; align-items: center; justify-content: center; }
+.modal-box { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 25px; border-radius: 20px; width: 90%; max-width: 400px; color: #fff; text-align: center; position: relative; }
+.close-btn { position: absolute; top: 10px; right: 15px; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+.modal-input { width: 100%; padding: 10px; margin: 8px 0; border-radius: 8px; border: 1px solid rgba(180,100,255,0.5); background: rgba(0,0,0,0.5); color: #fff; font-family: inherit; }
+.modal-btn { width: 100%; padding: 12px; background: linear-gradient(135deg, rgba(138,43,226,0.8), rgba(75,0,130,0.8)); border: none; border-radius: 8px; color: #fff; font-weight: bold; cursor: pointer; margin-top: 10px; transition: 0.2s;}
+.modal-btn:hover { transform: scale(1.02); box-shadow: 0 0 15px rgba(138,43,226,0.5); }
+
+#padrinos-list { list-style: none; padding: 0; margin-top: 15px; text-align: left; max-height: 150px; overflow-y: auto; background: rgba(0,0,0,0.3); border-radius: 8px; padding: 10px;}
+#padrinos-list li { padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; }
