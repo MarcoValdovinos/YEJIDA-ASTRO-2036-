@@ -37,6 +37,8 @@
     <link rel="stylesheet" href="style/pq_numerology.css">
     <link rel="stylesheet" href="style/perfil.css">
     <link rel="stylesheet" href="style/nav.css">
+    <script src="https://cdn.jsdelivr.net/npm/tweetnacl@1.0.3/nacl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tweetnacl-util@0.15.1/nacl-util.min.js"></script>
 </head>
 <body>
 
@@ -138,6 +140,13 @@
 <canvas id="cosmos"></canvas>
 <div class="container" style="padding-top: 30px;">
     <h1>✦ Quinta Esencia · 2036 ✦</h1>
+
+
+<div class="donacion-widget" style="border-color: rgba(0,255,200,0.4); background: linear-gradient(135deg, rgba(0,255,200,0.05), transparent);">
+    <h4>⚛️ Identidad Soberana</h4>
+    <p style="font-size: 0.75rem;">Tu firma criptográfica (Ed25519) en este dispositivo:</p>
+    <div id="arkhe-pubkey-display" style="font-family: monospace; color: #00ffcc; font-size: 0.9rem; letter-spacing: 1px; font-weight: bold;">Generando...</div>
+</div>
 
 <div id="reloj-cabalistico">
     <div id="planet-clock"></div>
@@ -682,5 +691,6 @@
 </nav>
 
     <script src="js/nav.js"></script>
+    <script src="js/arkhe_crypto.js"></script>
 </body>
 </html>

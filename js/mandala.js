@@ -25,6 +25,19 @@ document.addEventListener("DOMContentLoaded", () => {
     
     document.getElementById("mandala-result").innerHTML = 
       `<h3>Tu Camino de Vida es el <strong>${lifePath}</strong></h3>`;
+
+    // Firmar criptográficamente el Mandala
+    if (typeof window.firmarDestino === 'function') {
+        const firma = window.firmarDestino(`${dateInput}-${lifePath}`);
+        document.getElementById("mandala-result").innerHTML += `
+            <div style="margin-top: 15px; padding: 10px; background: rgba(0,255,200,0.1); border: 1px dashed #00ffcc; border-radius: 8px; font-size: 0.7rem; text-align: left; word-break: break-all;">
+                <strong style="color:#00ffcc;">✓ Sello Criptográfico (Ed25519):</strong><br>
+                <span style="color:#fff; font-family: monospace;">${firma.substring(0, 32)}...</span><br>
+                <span style="color:#888; font-size: 0.6rem;">Este mandala está firmado por tu dispositivo. Nadie puede alterarlo.</span>
+            </div>
+        `;
+    }
+
   });
 
   function drawMandala(num) {
